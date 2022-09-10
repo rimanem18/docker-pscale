@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/pscale/Dockerfile
+    tty: true
+    environment:
+      - DB_NAME=${DB_NAME:-testdb}
+      - DB_BRANCH=${DB_BRANCH:-testbranch}
